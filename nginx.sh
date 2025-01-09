@@ -11,4 +11,4 @@ php-fpm$PHP_VERSION -c /app/php/php.ini --fpm-config /app/php/php-fpm.conf --dae
 echo "[Docker] Starting NGINX"
 echo "[Docker] Services successfully launched"
 
-nginx -c /app/nginx/nginx.conf -p /home/container
+nginx -c /app/nginx/nginx.conf -p /app
