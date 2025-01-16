@@ -9,7 +9,7 @@ php-fpm$PHP_VERSION -c /app/php/php.ini --fpm-config /app/php/php-fpm.conf --dae
 # [Docker] Adjust socket permissions for Nginx to access it
 echo "[Docker] Adjusting permissions for PHP-FPM socket"
 chmod 770 /app/tmp/php-fpm.sock
-chown nobody:nogroup /app/tmp/php-fpm.sock
+chown root /app/tmp/php-fpm.sock
 
 
 # [Docker] Starting NGINX
