@@ -7,10 +7,15 @@ echo "[Docker] Starting PHP-FPM"
 php-fpm$PHP_VERSION -c /app/php/php.ini --fpm-config /app/php/php-fpm.conf --daemonize
 
 # [Docker] Adjust socket permissions for Nginx to access it
-echo "[Docker] Adjusting permissions for PHP-FPM socket"
+echo "[Docker] Adjusting permissions"
 chmod 770 /app/tmp/php-fpm.sock
-chown root /app/tmp/php-fpm.sock
+chown www-data:www-data /app/tmp/php-fpm.sock
+chown -R www-data:www-data /app/www
 
+chmod g+s /app/www
+
+echo "10.0.0.190 painel.hight.systems" >> /etc/hosts
+echo "10.0.0.190 node2.hight.systems" >> /etc/hosts
 
 # [Docker] Starting NGINX
 echo "[Docker] Starting NGINX"
