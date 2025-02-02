@@ -11,6 +11,7 @@ echo "[Docker] Adjusting permissions"
 chmod 770 /app/tmp/php-fpm.sock
 chown www-data:www-data /app/tmp/php-fpm.sock
 chown -R www-data:www-data /app/www
+chown www-data:www-data /app/php/sessions
 
 chmod g+s /app/www
 
